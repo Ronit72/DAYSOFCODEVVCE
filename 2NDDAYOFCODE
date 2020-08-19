@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// Complete the has_cycle function below.
+
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+bool has_cycle(SinglyLinkedListNode* head) 
+{
+    SinglyLinkedListNode* tp=head;
+    SinglyLinkedListNode* tp1=head->next;
+    while(tp!=NULL&&tp1!=NULL&&tp1->next!=NULL)
+    {
+        if(tp==tp1)
+        return true;
+        tp=tp->next;
+        tp1=tp1->next->next;
+    }
+    return false;
+}
